@@ -59,3 +59,20 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: #27272a;
   border-radius: 2px;
 }
+
+@layer components {
+  .tech-icon {
+    @apply relative inline-flex cursor-default;
+  }
+
+  .tech-icon .tech-tooltip {
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-zinc-200 bg-zinc-800 border border-zinc-700 rounded-md whitespace-nowrap pointer-events-none z-10 transition-all duration-200;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .tech-icon:hover .tech-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
