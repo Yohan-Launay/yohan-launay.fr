@@ -6,8 +6,3 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Étape 2 : Servir avec nginx
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
